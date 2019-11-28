@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+python << END
+from modules.facebook import Facebook
+robot = Facebook()
+robot.log_in()
+END

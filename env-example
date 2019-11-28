@@ -1,0 +1,5 @@
+# Path for downloaded firefox gecko driver
+# https://github.com/mozilla/geckodriver/releases
+FIREFOX_PATH='.\geckodriver-v0.26.0-win64\geckodriver.exe'
+FACEBOOK_EMAIL='user@example.com'
+FACEBOOK_PASS='pass'
