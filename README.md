@@ -4,7 +4,7 @@ Boilerplate for web automation with Selenium, Python and Bash
 
 ### Prerequisites
 
-- Firefox geckodriver executable in PATH or path in .env
+- [Firefox geckodriver](https://github.com/mozilla/geckodriver/releases) executable in PATH or path in .env
 
 - Python3 and Pipenv for Selenium virtual environment
 
