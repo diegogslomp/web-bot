@@ -11,8 +11,8 @@ Boilerplate for web automation with Selenium, Python and Bash
 ```
 git clone https://github.com/diegogslomp/webbot.git
 cd webbot
-pipenv install 
+pipenv install
 # Edit .env with gecko path and user info
 cp env-example .env
-pipenv run bash scripts\facebook-login
+bash scripts\facebook-login
 ```
