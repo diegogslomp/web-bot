@@ -1,6 +1,6 @@
 # webbot
 
-Boilerplate for web automation with Selenium, Python and Bash
+Boilerplate for web automation with Selenium and Python
 
 ### Prerequisites
 
