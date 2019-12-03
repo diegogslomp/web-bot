@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
 
-pipenv run python << END
-from modules.facebook import Facebook
-robot = Facebook()
-robot.log_in()
-END
+pipenv run python modules/facebook.py login
