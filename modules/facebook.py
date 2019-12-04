@@ -1,6 +1,10 @@
 import os
 import argparse
 from robot import Robot
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class Facebook(Robot):
@@ -10,7 +14,13 @@ class Facebook(Robot):
             os.environ['FACEBOOK_EMAIL'])
         self.driver.find_element_by_name('pass').send_keys(
             os.environ['FACEBOOK_PASS'])
-        self.driver.find_element_by_id('loginbutton').click()
+        try:
+            self.driver.find_element_by_name('login').click()
+        except:
+            self.driver.find_element_by_id('loginbutton').click()
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.ID, 'userNav')))
+        print('Logged In')
 
 
 if __name__ == '__main__':
