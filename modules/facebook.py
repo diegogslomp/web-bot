@@ -9,6 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class Facebook(Robot):
     def log_in(self):
+        # No browser GUI
+        # os.environ['MOZ_HEADLESS'] = '1'
         self.driver.get('https://facebook.com')
         self.driver.find_element_by_name('email').send_keys(
             os.environ['FACEBOOK_EMAIL'])
@@ -21,6 +23,8 @@ class Facebook(Robot):
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.ID, 'userNav')))
         print('Logged In')
+        # Quit using No browser GUI
+        # self.driver.quit()
 
 
 if __name__ == '__main__':
