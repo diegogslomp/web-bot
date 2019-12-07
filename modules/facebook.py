@@ -1,13 +1,13 @@
 import os
 import argparse
-from robot import Robot
+from bot import Bot
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-class Facebook(Robot):
+class Facebook(Bot):
     def log_in(self):
         # No browser GUI
         # os.environ['MOZ_HEADLESS'] = '1'

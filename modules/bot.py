@@ -2,7 +2,7 @@ import os
 from selenium import webdriver
 
 
-class Robot():
+class Bot():
     def __init__(self):
 
         if 'FIREFOX_PATH' in os.environ:
