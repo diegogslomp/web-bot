@@ -40,7 +40,7 @@ if __name__ == '__main__':
         os.environ['FACEBOOK_PASS'] = args.password
 
     if args.function == 'login':
-        robot = Facebook()
-        robot.log_in()
+        bot = Facebook()
+        bot.log_in()
     else:
         print('Nothing to do')
