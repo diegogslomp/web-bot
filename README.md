@@ -1,6 +1,6 @@
 # webbot
 
-Boilerplate for web automation with Selenium and Python
+Web automation with Selenium and Python
 
 ### Prerequisites
 
@@ -9,8 +9,8 @@ Boilerplate for web automation with Selenium and Python
 - Python3 and Pipenv for Selenium virtual environment
 
 ```
-git clone https://github.com/diegogslomp/webbot.git
-cd webbot
+git clone https://github.com/diegogslomp/bot.git
+cd bot
 pipenv install
 # Edit .env with gecko path and user info
 cp env-example .env
