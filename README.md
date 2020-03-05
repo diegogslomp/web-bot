@@ -1,4 +1,4 @@
-# webbot
+# bot
 
 Web automation with Selenium and Python
 
