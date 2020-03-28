@@ -14,5 +14,5 @@ cd bot
 pipenv install
 # Edit .env with gecko path and user info
 cp env-example .env
-bash scripts\facebook-login
+bash facebook-login
 ```
