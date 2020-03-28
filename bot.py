@@ -1,16 +1,22 @@
 import os
 import argparse
-from bot import Bot
+from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-class Facebook(Bot):
+class Bot():
+    def __init__(self):
+        if 'FIREFOX_PATH' in os.environ:
+            self.driver = webdriver.Firefox(
+                executable_path=os.environ['FIREFOX_PATH'])
+        else:
+            self.driver = webdriver.Firefox()
+
     def log_in(self):
-        # No browser GUI
-        # os.environ['MOZ_HEADLESS'] = '1'
+
         self.driver.get('https://facebook.com')
         self.driver.find_element_by_name('email').send_keys(
             os.environ['FACEBOOK_EMAIL'])
@@ -22,8 +28,7 @@ class Facebook(Bot):
             self.driver.find_element_by_id('loginbutton').click()
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.ID, 'userNav')))
-        print('Logged In')
-        # Quit using No browser GUI
+        print('Logged in')
         # self.driver.quit()
 
 
@@ -40,7 +45,7 @@ if __name__ == '__main__':
         os.environ['FACEBOOK_PASS'] = args.password
 
     if args.function == 'login':
-        bot = Facebook()
+        bot = Bot()
         bot.log_in()
     else:
         print('Nothing to do')

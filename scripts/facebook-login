@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-pipenv run python modules/facebook.py login
