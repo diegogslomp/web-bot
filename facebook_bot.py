@@ -9,19 +9,17 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class Bot():
     def __init__(self):
-        if 'FIREFOX_PATH' in os.environ:
-            self.driver = webdriver.Firefox(
-                executable_path=os.environ['FIREFOX_PATH'])
-        else:
-            self.driver = webdriver.Firefox()
+        self.url = 'https://facebook.com'
+        self.gecko_path = os.getenv('FIREFOX_PATH', '.\geckodriver.exe')
+        self.driver = webdriver.Firefox(
+            executable_path=self.gecko_path)
+        self.email = os.getenv('USER', 'user@example.com')
+        self.password = os.getenv('PASSWORD', 'user@example.com')
 
     def log_in(self):
-
-        self.driver.get('https://facebook.com')
-        self.driver.find_element_by_name('email').send_keys(
-            os.environ['FACEBOOK_EMAIL'])
-        self.driver.find_element_by_name('pass').send_keys(
-            os.environ['FACEBOOK_PASS'])
+        self.driver.get(self.url)
+        self.driver.find_element_by_name('email').send_keys(self.email)
+        self.driver.find_element_by_name('pass').send_keys(self.password)
         try:
             self.driver.find_element_by_name('login').click()
         except:
@@ -34,15 +32,15 @@ class Bot():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('function', help='login')
-    parser.add_argument('--email', '--user', '-u', help='facebook email')
-    parser.add_argument('--password', '-p', help='facebook pass')
+    parser.add_argument('task', help='login')
+    parser.add_argument('--email', '--user', '-u')
+    parser.add_argument('--password', '-p')
     args = parser.parse_args()
 
     if args.email:
-        os.environ['FACEBOOK_EMAIL'] = args.email
+        os.environ['USER'] = args.user
     if args.password:
-        os.environ['FACEBOOK_PASS'] = args.password
+        os.environ['PASSWORD'] = args.password
 
     if args.function == 'login':
         bot = Bot()
