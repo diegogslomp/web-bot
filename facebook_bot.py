@@ -14,7 +14,7 @@ class Bot():
         self.driver = webdriver.Firefox(
             executable_path=self.gecko_path)
         self.email = os.getenv('USER', 'user@example.com')
-        self.password = os.getenv('PASSWORD', 'user@example.com')
+        self.password = os.getenv('PASSWORD', 'password')
 
     def log_in(self):
         self.driver.get(self.url)
