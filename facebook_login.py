@@ -9,6 +9,7 @@ if __name__ == "__main__":
     url = 'https://facebook.com'
     gecko_path = os.getenv('FIREFOX_PATH', '.\geckodriver.exe')
     browser = webdriver.Firefox(executable_path=gecko_path)
+    browser.maximize_window()
     email = os.getenv('EMAIL', 'user@example.com')
     password = os.getenv('PASSWORD', 'password')
     browser.get(url)
