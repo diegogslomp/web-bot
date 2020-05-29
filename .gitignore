@@ -1,7 +1,7 @@
-# Gecko firefox webdriver folder and logs
 geckodriver*
-# Optionally added
 Pipfile.lock
 .vscode/
 .env
 __pycache__/
+node_modules/
+example.png

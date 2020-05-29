@@ -1,4 +1,3 @@
-# Default values, rename this file to .env and change vars
 FIREFOX_PATH='.\geckodriver.exe'
-USER='user@example.com'
+EMAIL='user@example.com'
 PASSWORD='password'

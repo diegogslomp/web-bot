@@ -1,33 +1,31 @@
 # bot
 
-Web automation with Selenium and Python
+Web automation examples
 
 ### Prerequisites
 
-- [Firefox geckodriver](https://github.com/mozilla/geckodriver/releases) executable inside this repo folder or path in .env
-
-- Python3 and Pipenv for Selenium virtual environment
+1. Python3, Pipenv and Geckodriver for .py
+2. Nodejs and Chromium for .js
 
 ### Install
 
 ```
+# For .py script
 git clone https://github.com/diegogslomp/bot.git
 cd bot
+cp env-example .env
 pipenv install
+./download-geckodriver-for-windows.sh
+```
+
+```
+# For .js script
+npm install
 ```
 
 ### Usage
 
 ```
-./facebook-bot --help
-Loading .env environment variables…
-usage: facebook_bot.py [-h] [--email EMAIL] [--password PASSWORD] task
-
-positional arguments:
-  task                  login
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --email EMAIL, --user EMAIL, -u EMAIL
-  --password PASSWORD, -p PASSWORD
+pipenv run python facebook_login.py
+node facebook-login.js
 ```
