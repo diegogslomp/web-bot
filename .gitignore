@@ -1,7 +1,9 @@
 geckodriver*
 Pipfile.lock
+Pipfile
 .vscode/
 .env
 __pycache__/
 node_modules/
 example.png
+venv/
